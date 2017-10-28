@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+
+
+      <link rel = "stylesheet" href = "https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+      <script src = "https://code.jquery.com/jquery-1.11.3.min.js"></script>
+      <script src = "https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+
+
+
+    <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
+    
+
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <title>Hello World</title>
+
+
+
+
+
+
+<script>
+    
+
+
+// Listen for orientation changes
+window.addEventListener("orientationchange", function() {
+ 
+if (screen.orientation='landscape') {
+window.location.href = "camera.html";
+navigator.vibrate(1000);
+
+
+}
+
+
+
+}, false);
+
+
+function validateForm()
+{
+var n= document.getElementById("copies").value;
+var singleValues = $( "#select" ).val();
+
+
+
+
+
+if (singleValues ==1) 
+
+{
+alert(10*n);
+myFunction();
+
+}
+
+if (singleValues ==2) 
+
+{
+alert(20 * n);
+myFunction();
+
+}
+
+if (singleValues ==3) 
+
+{
+alert(30 * n);
+myFunction();
+
+
+}
+
+if (singleValues ==4) 
+
+{
+alert(40 * n);
+myFunction();
+
+
+}
+if (singleValues ==5) 
+
+{
+alert(40 * n);
+myFunction();
+
+
+}
+
+}
+
+
+function myFunction() {
+    var r =confirm("Agree for the checkout?!");
+if (r == true) {
+
+window.location.href = "Order.html";
+
+} else {
+    txt = "You pressed Cancel!";
+}
+}
+
+
+
+
+
+
+
+
+
+</script>
+
+
+
+
+
+
+
+</head>
+
+
+<body>
+      <div data-role = "page">
+         <div data-role = "header">
+            <h2>Photo Request Form</h2>
+         </div>
+      
+         <div data-role = "main" class = "ui-content">
+            <form method = "post" onsubmit="return validateForm()">
+               <label for = "fname">Name</label>
+                  <input type = "text" name = "fname" id = "fname" 
+                     placeholder = "Full Name">
+
+
+
+                <label for = "email">Email</label>
+                  <input type = "email" name = "email" id = "email" 
+                     placeholder = "Email Address">
+
+
+
+                 <label for = "contactAd">Contact Address</label>
+                  <input type = "text" name = "contactAd" id = "emacontactAdil" 
+                     placeholder = "Contact Address">
+
+
+
+                 <label for = "phone">Contact Number</label>
+                  <input type = "number" name = "phone" id = "phone" 
+                     placeholder = "Contact Number">
+
+
+                 <label for = "copies">Copies Needed</label>
+                  <input type = "number" name = "copies" id = "copies" required 
+                     placeholder = "Copies needed">
+
+
+
+               <label for = "select">Select Photo Size</label>
+               <select name = "select" id = "select">
+                  <option value = "1">10 * 20</option>
+                  <option value = "2">100 * 125</option>
+                  <option value = "3">60 * 60</option>
+                  <option value = "4">20 * 100</option>
+                  <option value = "5">50 * 50</option>
+               </select>
+
+              
+               <label for = "date">Date of Delivery</label>
+               <input type = "date" name = "date" id = "date">
+
+
+              <input type = "submit" value = "Check Out" name="check" data-inline = "true"></input>
+
+
+
+
+            </form>
+         </div>
+      </div>
+      
+   </body>
+</html>
